@@ -1800,7 +1800,7 @@ public class WhereClauseParserTest extends AbstractCairoTest {
     @Test
     public void testTwoNestedBetween1() {
         try {
-            modelOf("ask between between 1 and 2 and bid+ask/2");
+            modelOf("ask between 1 and 2 and bid+ask/2");
             Assert.fail();
         } catch (SqlException e) {
             TestUtils.assertContains(e.getFlyweightMessage(), "between statements cannot be nested");
